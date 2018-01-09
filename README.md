@@ -3,19 +3,20 @@
 ToolShed is a cornucopia of tools and source code for the Tandy Color Computer and Dragon micro.
 
 The repository contains:
-- assemblers to perform cross-development from Windows, Linux, and macOS
-- os9 and decb tools for copying files to/from host file systems to disk images
-- source code for various CoCo and Dragon ROMs
-- source code to HDB-DOS, DriveWire DOS, and SuperDOS
-- other miscellaneous tools
+- os9 and decb tools for copying files to/from host file systems to disk images.
+- source code for CoCo and Dragon system ROMs.
+- source code for custom ROMs like HDB-DOS, DriveWire DOS, and SuperDOS.
+- source code for the Microware C compiler for cross-hosted compilation (currently needs work).
+- other miscellaneous tools.
+- assemblers to perform cross-development from Windows, Linux, and macOS (see the NOTE below on assembler recommendations).
 
 **NOTE:** while the venerable 6809 cross-assembler, mamou, is part of the repository, it is only kept for historical value. Everyone should really be using William Astle's excellent LWTOOLS which contains the *lwasm* 6809 assembler and *lwlink* linker. [Download the latest version of the source here.](http://lwtools.projects.l-w.ca)
 
 ## Building on Windows
 
-The recommended build environment is MingW32 or MingW64 (http://mingw.org/), MSYS2 (http://msys2.github.io/), or the WSL subsystem (for Windows 10+) (https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
+The recommended build environment is [MingW32 or MingW64](http://mingw.org/), [MSYS2](http://msys2.github.io/), or the [WSL subsystem for Windows 10+](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
 
-The easiest way to install MingW is using a mingw-get-inst.*.exe from http://mingw.org/wiki/Getting_Started
+The easiest way to install MingW is using a mingw-get-inst.*.exe [from here](http://mingw.org/wiki/Getting_Started).
 
 Inside MingW, make sure you have "make" installed. There are several options, but the simpler mingw-make should be good enough:
 ```
@@ -41,7 +42,7 @@ $ make -C build/unix install
 
 ## Building HDB-DOS and DriveWire DOS
 
-It is recommended to have lwtools installed (http://lwtools.projects.l-w.ca/).  You will also need "makewav" from Toolshed installed to build WAV files.  See hdbdos/README.txt and the makefiles for different build options.
+It is highly recommended to have [LWTOOLS](http://lwtools.projects.l-w.ca/) installed.  You will also need "makewav" from ToolShed installed to build WAV files.  See hdbdos/README.txt and the makefiles for different build options.
 
 To build all default flavors:
 ```
@@ -50,10 +51,10 @@ $ make -C hdbdos
 $ make -C superdos
 ```
 
-Instead of lwtools the deprecated mamou can still be used (YMMV):
+Instead of LWTOOLS the deprecated mamou can still be used (YMMV):
 ```
 $ make -C dwdos AS="mamou -r -q"
 $ make -C hdbdos AS="mamou -r -q"
 ```
 
-Note that superdos still builds with mamou by default.
+Note that SuperDOS still builds with mamou by default.
