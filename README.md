@@ -9,6 +9,8 @@ The repository contains:
 - source code to HDB-DOS, DriveWire DOS, and SuperDOS
 - other miscellaneous tools
 
+**NOTE:** while the venerable 6809 cross-assembler, mamou, is part of the repository, it is only kept for historical value. Everyone should really be using William Astle's excellent LWTOOLS which contains the *lwasm* 6809 assembler and *lwlink* linker. [Download the latest version of the source here.](http://lwtools.projects.l-w.ca)
+
 ## Building on Windows
 
 The recommended build environment is MingW32 or MingW64 (http://mingw.org/), MSYS2 (http://msys2.github.io/), or the WSL subsystem (for Windows 10+) (https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
