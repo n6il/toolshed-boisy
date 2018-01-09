@@ -3,11 +3,11 @@
 ToolShed is a cornucopia of tools and source code for the Tandy Color Computer and Dragon micro.
 
 The repository contains:
-	- assemblers to perform cross-development from Windows, Linux, and macOS
-	- os9 and decb tools for copying files to/from host file systems to disk images
-	- source code for various CoCo and Dragon ROMs
-	- source code to HDB-DOS, DriveWire DOS, and SuperDOS
-	- other miscellaneous tools
+- assemblers to perform cross-development from Windows, Linux, and macOS
+- os9 and decb tools for copying files to/from host file systems to disk images
+- source code for various CoCo and Dragon ROMs
+- source code to HDB-DOS, DriveWire DOS, and SuperDOS
+- other miscellaneous tools
 
 ## Building on Windows
 
