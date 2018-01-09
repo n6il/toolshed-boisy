@@ -1,20 +1,21 @@
 # ToolShed
 
-ToolShed is a package of utilities to perform cross-development from Windows,
-Linux or Mac OS X computers to the Tandy Color Computer and Dragon
-microcomputers.
+ToolShed is a cornucopia of tools and source code for the Tandy Color Computer and Dragon micro.
+
+The repository contains:
+	- assemblers to perform cross-development from Windows, Linux, and macOS
+	- os9 and decb tools for copying files to/from host file systems to disk images
+	- source code for various CoCo and Dragon ROMs
+	- source code to HDB-DOS, DriveWire DOS, and SuperDOS
+	- other miscellaneous tools
 
 ## Building on Windows
 
-The recommended build environment is MingW32 or MingW64 (http://mingw.org/),
-MSYS2 (http://msys2.github.io/), or the WSL subsystem (for Windows 10+)
-(https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
+The recommended build environment is MingW32 or MingW64 (http://mingw.org/), MSYS2 (http://msys2.github.io/), or the WSL subsystem (for Windows 10+) (https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux).
 
-The easiest way to install MingW is using a mingw-get-inst.*.exe from
-http://mingw.org/wiki/Getting_Started
+The easiest way to install MingW is using a mingw-get-inst.*.exe from http://mingw.org/wiki/Getting_Started
 
-Inside MingW, make sure you have "make" installed. There are several options,
-but the simpler mingw-make should be good enough:
+Inside MingW, make sure you have "make" installed. There are several options, but the simpler mingw-make should be good enough:
 ```
 $ mingw-get install mingw-make
 ```
@@ -24,11 +25,9 @@ Enter the unpackaged toolshed directory and run:
 $ make -C build/unix install CC=gcc
 ```
 
+## Building on Linux and macOS
 
-## Building on Linux
-
-To build cocofuse you will need to have FUSE libraries and header files
-installed. On Debian-based systems:
+To build cocofuse you will need to have FUSE libraries and header files installed. On Debian-based systems:
 ```
 $ sudo apt-get install libfuse-dev
 ```
@@ -40,9 +39,7 @@ $ make -C build/unix install
 
 ## Building HDB-DOS and DriveWire DOS
 
-It is recommended to have lwtools installed (http://lwtools.projects.l-w.ca/).
-You will also need "makewav" from Toolshed installed to build WAV files.
-See hdbdos/README.txt and the makefiles for different build options.
+It is recommended to have lwtools installed (http://lwtools.projects.l-w.ca/).  You will also need "makewav" from Toolshed installed to build WAV files.  See hdbdos/README.txt and the makefiles for different build options.
 
 To build all default flavors:
 ```
