@@ -15,11 +15,13 @@ http://mingw.org/wiki/Getting_Started
 
 Inside MingW, make sure you have "make" installed. There are several options,
 but the simpler mingw-make should be good enough:
-```$ mingw-get install mingw-make
+```
+$ mingw-get install mingw-make
 ```
 
 Enter the unpackaged toolshed directory and run:
-```$ make -C build/unix install CC=gcc
+```
+$ make -C build/unix install CC=gcc
 ```
 
 
@@ -27,11 +29,13 @@ Enter the unpackaged toolshed directory and run:
 
 To build cocofuse you will need to have FUSE libraries and header files
 installed. On Debian-based systems:
-```$ sudo apt-get install libfuse-dev
+```
+$ sudo apt-get install libfuse-dev
 ```
 
 Enter the unpackaged toolshed directory and run:
-```$ make -C build/unix install
+```
+$ make -C build/unix install
 ```
 
 ## Building HDB-DOS and DriveWire DOS
@@ -41,15 +45,16 @@ You will also need "makewav" from Toolshed installed to build WAV files.
 See hdbdos/README.txt and the makefiles for different build options.
 
 To build all default flavors:
-```$ make -C dwdos
+```
+$ make -C dwdos
 $ make -C hdbdos
 $ make -C superdos
 ```
 
 Instead of lwtools the deprecated mamou can still be used (YMMV):
-```$ make -C dwdos AS="mamou -r -q"
+```
+$ make -C dwdos AS="mamou -r -q"
 $ make -C hdbdos AS="mamou -r -q"
 ```
 
 Note that superdos still builds with mamou by default.
-# ToolShed
