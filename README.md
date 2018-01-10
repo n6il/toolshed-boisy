@@ -28,7 +28,7 @@ Enter the unpackaged toolshed directory and run:
 $ make -C build/unix install CC=gcc
 ```
 
-## Building on Linux and macOS
+## Building on Linux
 
 To build cocofuse you will need to have FUSE libraries and header files installed. On Debian-based systems:
 ```
@@ -36,6 +36,23 @@ $ sudo apt-get install libfuse-dev
 ```
 
 Enter the unpackaged toolshed directory and run:
+```
+$ make -C build/unix install
+```
+
+## Building on macOS
+
+To build cocofuse for the Mac, you will need to have FUSE libraries and header files installed. 
+
+The best way to do this is to first (visit the Homebrew page)[https://brew.sh] and use the simple one-line ruby command to install Homebrew on your Mac.
+
+Once that's done, you can use the brew command to install osxfuse:
+
+```
+brew cask install osxfuse
+```
+
+Then, enter the unpackaged toolshed directory and run:
 ```
 $ make -C build/unix install
 ```
