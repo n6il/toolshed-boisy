@@ -56,7 +56,6 @@ static struct cmdtbl table[] =
     {os9makdir,	"makdir"},
     {os9modbust,"modbust"},
     {os9padrom,	"padrom"},
-    {os9rdump,	"rdump"},
     {os9rename,	"rename"},
     {NULL,	NULL}
 };
