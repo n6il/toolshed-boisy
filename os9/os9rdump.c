@@ -33,8 +33,12 @@ void getname(char *s);
 #define NEGMASK     0x40        /* negate on resolution */
 #define RELATIVE    0x80        /* relative reference */
 /* misc. constants */
+#ifdef __APPLE__
+#define ROFSYNC     0x62CD2387
+#else
 #define ROFSYNC	    0x8723CD62
-#define SYMLEN      128       /* Length of symbols */
+#endif
+#define SYMLEN      9         /* Length of symbols */
 #define MAXNAME     16        /* length of module name */
 
 /* definition/reference */
@@ -135,7 +139,7 @@ int os9rdump(int argc, char **argv)
 	/* walk command line for pathnames */
 	for (i = 1; i < argc; i++)
 	{
-		if (argv[i][0] == '-')
+		if (argv[0][0] == '-')
 		{
 			continue;
 		}
@@ -198,7 +202,11 @@ void do_rdump(char *file)
 
 unsigned int o9_int(u16 nbr)
 {
+#ifdef __APPLE__
+	return nbr;
+#else
 	return(((nbr&0xff00)>>8) + ((nbr&0xff)<<8));
+#endif
 }
 
 
@@ -243,11 +251,6 @@ void showglobs(void)
 	
 	
 	count = getwrd(in);          /* global def count */
-	if (count == 0xFFFF)
-	{
-		count = 0;
-	}
-
 	if (gflag)
 		printf("\n%u global symbols defined:\n", count);
 
@@ -318,10 +321,6 @@ void showrefs(void)
 
 	
 	count = getwrd(in);
-        if (count == 0xFFFF)
-	{
-		count = 0;
-	}
 
 	if(rflag)
 	{
@@ -363,11 +362,6 @@ void showlcls(void)
 	unsigned count;
 	def_ref ref;
 	count=getwrd(in);
-
-	if (count == 0xFFFF)
-	{
-		count = 0;
-	}
 
 	if (oflag)
 	{
